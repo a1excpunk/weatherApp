@@ -110,6 +110,7 @@ input.addEventListener("keyup", (event) => {
             .then((Response) => Response.json())
             .then((data) => {
                 fetchedData(data);
+                input.value = "";
             });
     }
 });
@@ -120,6 +121,7 @@ searchBtn.addEventListener("click", () => {
         .then((Response) => Response.json())
         .then((data) => {
             fetchedData(data);
+            input.value = "";
         });
 });
 
