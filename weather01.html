@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather</title>
+    <link rel="icon" href="./images/hiclipart.com (3).png" type="image/icon">
+    <link rel="stylesheet" href="weather01.css">
+</head>
+
+<body>
+<!-- <img src="./new york.jpg" width="1500" height="1500"> -->
+    <div id="main_content">
+        
+        <h1 id="main_temp" class="mainContent">temp <span class="temp_unit">c</span></h1>
+        <h2 id="city_name" class="mainContent">city</h2>
+        <h3 id="feels_like_temp" class="mainContent">feels like</h3>
+        <h3 id="date" class="mainContent">date</h3>
+        <h3 id="weather_main" class="mainContent">weather</h3>
+    </div>
+
+    <div id="side_content">
+        
+            <div id="input_section">
+                <input type="text" id="input" placeholder="Enter Location">
+                <button id="search">Search</button>
+                <!-- <button id="get-location">Get Location</button> -->
+            </div>
+            <div id="info">
+                <div id="cities"> 
+                    <li class="default_cities" id="beijing_city" > Beijing</li>
+                    <li class="default_cities" id="newyork_city"> New York</li>
+                    <li class="default_cities" id="tokyo_city"> Tokyo</li>
+                    <li class="default_cities" id="moscow_city"> Moscow</li>
+                </div>
+                <div id="w_details"> 
+                    <h3 id="weather_details">weather details</h3>
+                    <li class="w_details" id="humidity">humidity</li>
+                    <li class="w_details" id="presure">presure</li>
+                    <li class="w_details" id="visibility">visibility</li> 
+                    <li class="w_details" id="weather_description">weather description</li> 
+                    <li class="w_details" id="wind"> wind</li> 
+                    <li class="w_details" id="temp_min">min temp</li>
+                    <li class="w_details" id="temp_max">max temp</li>
+                </div>
+            </div>
+        
+    </div>
+    <footer>
+        <p>&copy; Alex 2020</p>
+    </footer>
+    <script src="./weather.js"></script>
+    
+</body>
+
+</html>
