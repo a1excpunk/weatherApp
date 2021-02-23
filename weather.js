@@ -33,6 +33,8 @@ const newYork = docById("newyork_city");
 const tokyo = docById("tokyo_city");
 const moscow = docById("moscow_city");
 
+input.value = "";
+
 // adding events to DOM elemnts (default cities)
 //~getting API
 //attaching fetched data to DOM
