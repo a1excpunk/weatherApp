@@ -149,6 +149,7 @@ function formattedTime(time) {
 }
 
 //geolocation //NOTE: attach properly
+//maybe implement try{} catch(){} block?
 function getLocation() {
     if (!navigator.geolocation) {
         console.log("Geolpocation API not supported by this browser :(");
@@ -166,7 +167,7 @@ function error() {
     console.log("Geolocation Error!:(");
 }
 
-document.getElementById("get-location").addEventListener("click", getLocation);
+//document.getElementById("get-location").addEventListener("click", getLocation);
 
 //~style
 //on click style change //! not filished
