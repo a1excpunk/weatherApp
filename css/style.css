@@ -150,9 +150,10 @@ input:focus {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   gap: 2%;
   height: 300px;
+  margin-top: 50px;
 }
 
 #humidity,
@@ -168,17 +169,27 @@ input:focus {
   margin-bottom: 7px;
   padding-left: 3%;
   padding-right: 3%;
-  box-shadow: -1px 3px 5px 0 rgba(80, 80, 80, 0.5);
-  background-color:#333;
-  transition: all 300ms ease-in-out;
+  box-shadow: -1px 3px 5px 0 rgba(41, 41, 41, 0.5);
+  background-color:var(--inputTextColor);
+  color: var(--inputBCKcolor);
   box-sizing: border-box;
   font-size: 1.2em;
   font-weight: 400;
+  transition: all 500ms ease-in-out;
+}
+
+#wind:hover{
+  transform: rotateY(180deg);
+  background-color: var(--inputBCKcolor);
+  background-image: url("../assets/./wind.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .default_cities:hover {
   transform: translateX(-5px);
-  background-color: #303030;
+
 }
 
 /* #weather_details_content {
