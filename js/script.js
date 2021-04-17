@@ -22,7 +22,6 @@ const input = docById("input");
 const humidity = docById("humidity");
 const presure = docById("presure");
 const visibility = docById("visibility");
-const weatherDescription = docById("weather_description");
 const wind = docById("wind");
 const minTemp = docById("temp_min");
 const maxTemp = docById("temp_max");
@@ -57,8 +56,6 @@ function fetchedData(data) {
     humidity.innerHTML = "humidity: " + humidityValue;
     presure.innerHTML = "pressure: " + presureValue;
     visibility.innerHTML = "visibility: " + visibilityValue;
-    weatherDescription.innerHTML =
-        "weather description: " + weatherDescriptionValue;
     wind.innerHTML = "wind speed: " + windValueSpeed;
     minTemp.innerHTML = "min temp: " + minTempValue;
     maxTemp.innerHTML = "max temp: " + maxTempValue;
@@ -74,7 +71,10 @@ beijing.addEventListener("click", () => {
             fetchedData(data);
         });
     
-    document.getElementById("weather_details_content").style.display = 'block'
+    // document.getElementById("weather_details_content").style.display = 'block'
+        // body.style.backgroundImage = 'url(C:/Users/User/Desktop/weatherApp/weatherApp/assets/ice.jpg)'
+        // body.style.backgroundSize = 'cover'
+    
 });
 newYork.addEventListener("click", () => {
     fetch(
@@ -178,7 +178,7 @@ let pageBCKimagePosition = body.style.backgroundPosition;
 let pageBCKimageAttachement = body.style.backgroundAttachment;
 let pageBCKimageSize = body.style.backgroundSize;
 
-beijing.addEventListener("click", () => { });
+beijing.addEventListener("click", () => {});
 newYork.addEventListener("click", () => { });
 tokyo.addEventListener("click", () => { });
 moscow.addEventListener("click", () => { });
