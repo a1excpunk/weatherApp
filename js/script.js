@@ -83,6 +83,7 @@ newYork.addEventListener("click", () => {
         .then((Response) => Response.json())
         .then((data) => {
             fetchedData(data);
+            console.log(data)
         });
 });
 tokyo.addEventListener("click", () => {
