@@ -16,10 +16,12 @@
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
+  height: 100vh;
 }
 
 * body main {
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,12 +32,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: absolute;
 }
 
-* body main #main-content {
+* body main #main-content-container {
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   padding: 10px;
+  height: 120px;
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,40 +51,38 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  top: 90px;
 }
 
-* body main #main-content div {
+* body main #main-content-container div {
   width: 5em;
   height: 5em;
   border: 1px solid #242424;
 }
 
-* body main #main-content #weather-detail-button {
+* body main #main-content-container #weather-detail-button {
   background-color: #303030;
   padding: 10px;
   position: relative;
 }
 
-* body main #main-content #weather-detail-button p {
+* body main #main-content-container #weather-detail-button p {
   width: 4em;
   text-transform: capitalize;
   position: absolute;
   top: 1.3em;
 }
 
-* body main #main-content #weather-detail-button:hover {
+* body main #main-content-container #weather-detail-button:hover {
   cursor: pointer;
   background-color: #242424;
 }
 
-* body main #main-content #weather-detail-button:active {
+* body main #main-content-container #weather-detail-button:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
 }
 
-* body main #side-content {
+* body main #side-content-container {
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   position: absolute;
@@ -193,6 +195,26 @@ li {
 #input-section button:active {
   -webkit-transform: scale(0.985);
           transform: scale(0.985);
+}
+
+footer {
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+footer p {
+  font-size: .8em;
+  padding-right: 150px;
+  padding-bottom: 10px;
 }
 
 .default-city:hover {
