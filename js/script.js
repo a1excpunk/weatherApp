@@ -1,14 +1,41 @@
-// setInterval(()=>{
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image1.jpg)"
-// },3000)
-// setInterval(()=>{
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image2.jpg)"
-// },6000)
+
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image2.jpg)"
+}, 10000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image3.jpg)"
+}, 15000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image4.jpg)"
+}, 20000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image5.jpg)"
+}, 25000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image6.jpg)"
+}, 30000)
 
 
+document.getElementById('exit-button').addEventListener('click', function () {
+    document.getElementById('weather-details-container').classList.add('scale-out-center')
+    setTimeout(() => {
+        document.getElementById('weather-details-container').classList.add('hidden')
+        document.getElementById('weather-details-container').classList.remove('scale-out-center')
+    }, 700)
 
+})
 
-
+document.getElementById('weather-detail-button').addEventListener('click', function () {
+    if (document.getElementById('weather-details-container').classList.contains('hidden')) {
+        document.getElementById('weather-details-container').classList.remove('hidden')
+    } else{
+        document.getElementById('weather-details-container').classList.add('swing-out-top-bck')
+        setTimeout(() => {
+            document.getElementById('weather-details-container').classList.remove('swing-out-top-bck')
+            document.getElementById('weather-details-container').classList.add('hidden')
+        }, 700)
+    }
+})
 
 
 
@@ -105,11 +132,11 @@
 //         .then((data) => {
 //             fetchedData(data);
 //         });
-    
+
 //     // document.getElementById("weather_details_content").style.display = 'block'
 //         // body.style.backgroundImage = 'url(C:/Users/User/Desktop/weatherApp/weatherApp/assets/ice.jpg)'
 //         // body.style.backgroundSize = 'cover'
-    
+
 // });
 // newYork.addEventListener("click", () => {
 //     fetch(

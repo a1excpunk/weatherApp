@@ -9,12 +9,12 @@
 
 * body {
   color: #ffffff;
-  background-color: #272727;
-  background: url("../assets/image2.jpg");
+  background: url("../assets/image1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  background-color: #272727;
   width: 100%;
   height: 100vh;
 }
@@ -59,15 +59,6 @@
 * body main #main-content-container div {
   width: 5em;
   height: 5em;
-}
-
-* body main #main-content-container .celcius {
-  width: 8px;
-  height: 8px;
-  border: 2px solid;
-  border-radius: 100%;
-  position: absolute;
-  right: 0;
 }
 
 * body main #main-content-container #main-temp-container {
@@ -299,6 +290,18 @@
 
 * body main #side-content-container #aside-content #cities ul li.default-city {
   padding-top: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  -webkit-box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
+          box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+* body main #side-content-container #aside-content #cities ul li.default-city:hover {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
 }
 
 * body main #side-content-container #aside-content #week-weather-container {
@@ -385,56 +388,277 @@
   bottom: 0;
 }
 
-.hidden {
+* body #weather-details-container {
+  position: absolute;
+  top: 16em;
+  left: 20%;
+  width: 40em;
+  height: 25em;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background-color: #b4b4b43f;
+}
+
+* body #weather-details-container h2 {
+  text-align: center;
+  margin-top: 1em;
+  text-transform: capitalize;
+}
+
+* body #weather-details-container #exit-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 5px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+* body #weather-details-container #exit-button:hover {
+  cursor: pointer;
+  background-color: #303030;
+}
+
+* body #weather-details-container #exit-button:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  background-color: #272727;
+}
+
+* body #weather-details-container #weather-details-content {
+  margin: 2em 0;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 7%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail {
+  position: relative;
+  width: 8em;
+  height: 8em;
+  margin-bottom: 2em;
+  background-color: #242424;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail .fetched-info {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail .unit {
+  display: block;
+  text-align: center;
+  top: 1.8em;
+  right: 0.3em;
+  font-size: 1.2em;
+  color: #e0e0e0;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail .unit.humidity {
+  position: absolute;
+  top: 0.8em;
+  right: 0.7em;
+  font-size: 1.6em;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail .unit.celcius {
+  top: 0.5em;
+  right: 2em;
+}
+
+* body #weather-details-container #weather-details-content .weather-detail .detail-text {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+
+* body .celcius {
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  border-radius: 100%;
+  position: absolute;
+  right: 0;
+}
+
+* body .hidden {
   display: none;
 }
 
-li {
+* body li {
   list-style-type: none;
 }
 
 .default-city {
-  text-transform: uppercase;
   padding: 7px 0;
-  cursor: pointer;
   width: 45%;
   height: 50%;
-  text-align: center;
-  -webkit-box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
-          box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
   margin-bottom: 5%;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
 }
 
-#humidity,
-#presure,
-#visibility,
-#wind,
-#min-temp,
-#max-temp {
-  width: 30%;
-  height: 45%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
-  /* margin-left: 5%; */
-  margin-bottom: 7px;
-  padding-left: 3%;
-  padding-right: 3%;
-  -webkit-box-shadow: -1px 3px 5px 0 rgba(41, 41, 41, 0.5);
-          box-shadow: -1px 3px 5px 0 rgba(41, 41, 41, 0.5);
-  background-color: var(--inputTextColor);
-  color: var(--inputBCKcolor);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 1.2em;
-  font-weight: 400;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:9:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation swing-in-top-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.swing-in-top-fwd {
+  -webkit-animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:33:18
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation swing-out-top-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+@keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+
+.swing-out-top-bck {
+  -webkit-animation: swing-out-top-bck 0.7s ease-out both;
+          animation: swing-out-top-bck 0.7s ease-out both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:16:16
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation scale-out-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+
+.scale-out-center {
+  -webkit-animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 footer {
@@ -455,11 +679,6 @@ footer p {
   font-size: 0.8em;
   padding-right: 50%;
   padding-bottom: 10px;
-}
-
-.default-city:hover {
-  -webkit-transform: translateX(-5px);
-          transform: translateX(-5px);
 }
 
 /* Media queries for Small screens, laptops: 769px — 1024px*/

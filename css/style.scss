@@ -1,7 +1,7 @@
 $pirmary-text-color: #ffffff;
 $secondary-text-color: #303030;
 $pirmary-background-color: #272727;
-$secondary-background-color: #b4b4b4;
+$secondary-background-color: #b4b4b43f;
 $thirdary-background-color: #242424;
 $input-background-color: #ececec;
 $active-button-background-color: #e0e0e0;
@@ -14,12 +14,12 @@ $active-button-background-color: #e0e0e0;
 
   body {
     color: $pirmary-text-color;
-    background-color: $pirmary-background-color;
-    background: url("../assets/image2.jpg");
+    background: url("../assets/image1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    background-color: $pirmary-background-color;
     width: 100%;
     height: 100vh;
 
@@ -52,27 +52,18 @@ $active-button-background-color: #e0e0e0;
           height: 5em;
         }
 
-        .celcius{
-          width: 8px;
-          height: 8px;
-          border: 2px solid;
-          border-radius: 100%;
-          position: absolute;
-          right: 0;
-        }
-
         // MAIN TEMP
-        
-        #main-temp-container{
+
+        #main-temp-container {
           position: relative;
 
-          span.celcius{
+          span.celcius {
             width: 12px;
             height: 12px;
             border: 3px solid;
           }
 
-          p{
+          p {
             font-size: 4em;
             height: 100%;
             text-align: center;
@@ -81,20 +72,20 @@ $active-button-background-color: #e0e0e0;
         }
 
         // CITY
-        #city-weather-container{
+        #city-weather-container {
           position: relative;
 
-          #weather-text{
+          #weather-text {
             text-transform: capitalize;
             font-size: 1em;
           }
 
-          span{
+          span {
             display: block;
             padding: 8px 0 0 0;
           }
 
-          #city-name{
+          #city-name {
             font-size: 1.5;
             text-transform: uppercase;
             position: absolute;
@@ -102,17 +93,16 @@ $active-button-background-color: #e0e0e0;
           }
         }
 
-
         // FEELS LIKE
-        #feels-like-container{
+        #feels-like-container {
           position: relative;
 
-          span.celcius{
+          span.celcius {
             top: 5px;
             right: 10px;
           }
 
-          #feels-like-temp{
+          #feels-like-temp {
             font-size: 1.8em;
             text-align: center;
             display: flex;
@@ -121,7 +111,7 @@ $active-button-background-color: #e0e0e0;
             height: 70%;
           }
 
-          #feels-like-text{
+          #feels-like-text {
             font-size: 1em;
             text-transform: capitalize;
             position: absolute;
@@ -130,26 +120,25 @@ $active-button-background-color: #e0e0e0;
         }
 
         // time stamp
-        #local-date-container{
+        #local-date-container {
           position: relative;
 
-          #time{
+          #time {
             font-size: 1.2em;
             display: block;
             margin-bottom: 10px;
           }
 
-          #week-day{
+          #week-day {
             font-size: 1em;
             text-transform: capitalize;
           }
-          p:last-of-type{
+          p:last-of-type {
             font-size: 0.6em;
             text-transform: uppercase;
             position: absolute;
             bottom: 0;
           }
-
         }
 
         // weather details BUTTON
@@ -256,6 +245,15 @@ $active-button-background-color: #e0e0e0;
 
               li.default-city {
                 padding-top: 20px;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-align: center;
+                box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
+                transition: all 300ms ease-in-out;
+
+                &:hover {
+                  transform: translateX(-5px);
+                }
               }
             }
           }
@@ -305,7 +303,7 @@ $active-button-background-color: #e0e0e0;
                       right: 0.5em;
                       width: 10px;
                       height: 10px;
-                      border: 2px solid ;
+                      border: 2px solid;
                       border-radius: 100%;
                     }
                   }
@@ -326,51 +324,237 @@ $active-button-background-color: #e0e0e0;
         }
       }
     }
+
+    #weather-details-container {
+      position: absolute;
+      top: 16em;
+      left: 20%;
+      width: 40em;
+      height: 25em;
+      transition: all 500ms;
+
+      background-color: $secondary-background-color;
+
+      h2 {
+        text-align: center;
+        margin-top: 1em;
+        text-transform: capitalize;
+      }
+
+      #exit-button {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        padding: 5px;
+        transition: all 500ms;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $secondary-text-color;
+        }
+
+        &:active {
+          transform: scale(0.8);
+          background-color: $pirmary-background-color;
+        }
+      }
+
+      #weather-details-content {
+        margin: 2em 0;
+        color: $pirmary-text-color;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 7%;
+        flex-wrap: wrap;
+
+        .weather-detail {
+          position: relative;
+          width: 8em;
+          height: 8em;
+          margin-bottom: 2em;
+          background-color: $thirdary-background-color;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-bottom: 1em;
+
+          .fetched-info {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 0.5em;
+          }
+
+          .unit {
+            // position: absolute;
+            display: block;
+            text-align: center;
+            top: 1.8em;
+            right: 0.3em;
+            font-size: 1.2em;
+            color: $active-button-background-color;
+
+            &.humidity {
+              position: absolute;
+              top: 0.8em;
+              right: 0.7em;
+              font-size: 1.6em;
+            }
+
+            &.celcius {
+              top: 0.5em;
+              right: 2em;
+            }
+          }
+
+          .detail-text {
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    // CECLIUS sign
+    .celcius {
+      width: 8px;
+      height: 8px;
+      border: 2px solid;
+      border-radius: 100%;
+      position: absolute;
+      right: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    li {
+      list-style-type: none;
+    }
   }
 }
 
-.hidden {
-  display: none;
-}
-
-li {
-  list-style-type: none;
-}
-
 .default-city {
-  text-transform: uppercase;
   padding: 7px 0;
-  cursor: pointer;
   width: 45%;
   height: 50%;
-  text-align: center;
-  box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
   margin-bottom: 5%;
-  transition: all 300ms ease-in-out;
   min-width: max-content;
 }
 
-#humidity,
-#presure,
-#visibility,
-#wind,
-#min-temp,
-#max-temp {
-  width: 30%;
-  height: 45%;
-  min-width: min-content;
-  /* margin-left: 5%; */
-  margin-bottom: 7px;
-  padding-left: 3%;
-  padding-right: 3%;
-  box-shadow: -1px 3px 5px 0 rgba(41, 41, 41, 0.5);
-  background-color: var(--inputTextColor);
-  color: var(--inputBCKcolor);
-  box-sizing: border-box;
-  font-size: 1.2em;
-  font-weight: 400;
-  transition: all 500ms ease-in-out;
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:9:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation swing-in-top-fwd
+ * ----------------------------------------
+ */
+
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
 }
+
+.swing-in-top-fwd {
+  animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:33:18
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation swing-out-top-bck
+ * ----------------------------------------
+ */
+ @keyframes swing-out-top-bck {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+}
+
+
+.swing-out-top-bck {
+	animation: swing-out-top-bck 0.7s ease-out both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-23 19:16:16
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-out-center
+ * ----------------------------------------
+ */
+ @keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+
+.scale-out-center {
+  animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+
+// #humidity,
+// #presure,
+// #visibility,
+// #wind,
+// #min-temp,
+// #max-temp {
+//   width: 30%;
+//   height: 45%;
+//   min-width: min-content;
+//   /* margin-left: 5%; */
+//   margin-bottom: 7px;
+//   padding-left: 3%;
+//   padding-right: 3%;
+//   background-color: $pirmary-background-color;
+//   color: var(--inputBCKcolor);
+//   box-sizing: border-box;
+//   font-size: 1.2em;
+//   font-weight: 400;
+//   transition: all 500ms ease-in-out;
+// }
 
 footer {
   position: relative;
@@ -384,10 +568,6 @@ footer {
     padding-right: 50%;
     padding-bottom: 10px;
   }
-}
-
-.default-city:hover {
-  transform: translateX(-5px);
 }
 
 /* Media queries for Small screens, laptops: 769px — 1024px*/
