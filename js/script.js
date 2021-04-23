@@ -1,19 +1,19 @@
 
-// setInterval(() => {
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image2.jpg)"
-// }, 10000)
-// setInterval(() => {
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image3.jpg)"
-// }, 15000)
-// setInterval(() => {
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image4.jpg)"
-// }, 20000)
-// setInterval(() => {
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image5.jpg)"
-// }, 25000)
-// setInterval(() => {
-//     document.querySelector('body').style.backgroundImage = "url(../assets/image6.jpg)"
-// }, 30000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image2.jpg)"
+}, 10000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image1.jpg)"
+}, 15000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image4.jpg)"
+}, 20000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image5.jpg)"
+}, 25000)
+setInterval(() => {
+    document.querySelector('body').style.backgroundImage = "url(../assets/image6.jpg)"
+}, 30000)
 
 
 document.getElementById('exit-button').addEventListener('click', function () {
