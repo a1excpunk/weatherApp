@@ -173,7 +173,7 @@ $active-button-background-color: #e0e0e0;
         right: 0;
         top: 0;
         width: 30%;
-        min-height: 100%;
+        min-height: 100vh;
 
         // INPUT
         #input-section {
@@ -221,6 +221,7 @@ $active-button-background-color: #e0e0e0;
 
         // DEFAULT CITIES AND WEEK WEATHER
         #aside-content {
+          backdrop-filter: blur(30px);
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -270,9 +271,11 @@ $active-button-background-color: #e0e0e0;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-around;
-                margin: 100px 6.5% 0;
-                gap: 10%;
+                justify-content: space-between;
+                margin: 70px 4% 0;
+                gap: 2%;
+                height: 300px;
+                width: 420px;
 
                 // week weather elements
                 li {
@@ -534,44 +537,19 @@ $active-button-background-color: #e0e0e0;
   animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-
-// #humidity,
-// #presure,
-// #visibility,
-// #wind,
-// #min-temp,
-// #max-temp {
-//   width: 30%;
-//   height: 45%;
-//   min-width: min-content;
-//   /* margin-left: 5%; */
-//   margin-bottom: 7px;
-//   padding-left: 3%;
-//   padding-right: 3%;
-//   background-color: $pirmary-background-color;
-//   color: var(--inputBCKcolor);
-//   box-sizing: border-box;
-//   font-size: 1.2em;
-//   font-weight: 400;
-//   transition: all 500ms ease-in-out;
-// }
-
 footer {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  position: absolute;
   height: 30px;
 
   p {
     font-size: 0.8em;
-    padding-right: 50%;
     padding-bottom: 10px;
   }
 }
 
 /* Media queries for Small screens, laptops: 769px — 1024px*/
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1044px) {
+
 }
 
 /* Media queries for iPads, Tablets: 481px — 768px*/
