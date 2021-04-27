@@ -13,159 +13,111 @@
 </head>
 
 <body>
-    <main>
-        <!-- MAIN weather info -->
-        <article id="main-content-container">
-            <div id="main-temp-container">
-                <span class="celcius"></span>
-                <p id="main-temp">0</p>
-            </div>
+    <!-- MAIN weather info -->
+    <section id="main-content-container">
+        <div id="main-temp-container">
+            <p id="main-temp">0</p>
+        </div>
 
-            <div id="city-weather-container">
-                <p id="weather-text">sunny</p>
-                <span>in</span>
-                <p id="city-name">city</p>
-            </div>
+        <div id="city-weather-container">
+            <p id="weather-text">sunny</p>
+            <p>in</p>
+            <p id="city-name">city</p>
+        </div>
 
 
-            <div id="feels-like-container">
-                <span class="celcius"></span>
-                <p id="feels-like-temp">0</p>
-                <p id="feels-like-text">feels like</p>
-            </div>
+        <div id="feels-like-container">
+            <p id="feels-like-temp">0</p>
+            <p id="feels-like-text">feels like</p>
+        </div>
 
-            <div id="local-date-container">
-                <span id="time"></span>
-                <p id="week-day"></p>
-                <p>local time</p>
-            </div>
+        <div id="local-date-container">
+            <div id="time"></div>
+            <p id="week-day"></p>
+            <p>local time</p>
+        </div>
 
-            <div id="weather-detail-button">
-                <p>weather details</p>
-            </div>
-        </article>
+        <div id="weather-detail-button">
+            <p>weather details</p>
+        </div>
 
-        <aside id="side-content-container" class="">
-            <!-- SEARCH -->
-            <div id="input-section">
-                <input type="text" id="input" placeholder="Enter Location">
-                <button type="button" id="search">Search</button>
-            </div>
+        <!-- SEARCH -->
+        <div id="input-section">
+            <input type="text" id="input" placeholder="Enter Location">
+            <button type="button" id="search">Search</button>
+        </div>
+    </section>
 
-            <div id="aside-content">
-                <!-- DEFAULT cities -->
-                <div id="cities">
-                    <ul>
-                        <li class="default-city" id="beijing-city">
-                            <p>beijing</p>
-                        </li>
-                        <li class="default-city" id="newyork-city">
-                            <p> new york</p>
-                        </li>
-                        <li class="default-city" id="tokyo-city">
-                            <p>tokyo</p>
-                        </li>
-                        <li class="default-city" id="moscow-city">
-                            <p>moscow</p>
-                        </li>
-                    </ul>
+    <!-- WEEK weather -->
+    <section id="week-weather-container" class="">
+        <ul>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">24</div>
                 </div>
-
-                <!-- WEEK weather -->
-                <div id="week-weather-container">
-                    <div id="week-weather-content">
-                        <ul>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-                                    </span>
-                                </div>
-                                <p>monday</p>
-                            </li>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-
-                                    </span>
-                                </div>
-                                <p>tuesday</p>
-                            </li>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-
-                                    </span>
-                                </div>
-                                <p>wednesday</p>
-                            </li>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-
-                                    </span>
-                                </div>
-                                <p>thursday</p>
-                            </li>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-
-                                    </span>
-                                </div>
-                                <p>friday</p>
-                            </li>
-                            <li>
-                                <div class="fetched-value-container">
-                                    <div class="fetched-value">0</div>
-                                    <span>
-
-                                    </span>
-                                </div>
-                                <p>saturday</p>
-                            </li>
-                        </ul>
-                    </div>
+                <p>monday</p>
+            </li>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">20</div>
                 </div>
-            </div>
+                <p>tuesday</p>
+            </li>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">25</div>
+                </div>
+                <p>wednesday</p>
+            </li>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">21</div>
+                </div>
+                <p>thursday</p>
+            </li>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">28</div>
+                </div>
+                <p>friday</p>
+            </li>
+            <li>
+                <div class="fetched-value-container">
+                    <div class="fetched-value">30</div>
+                </div>
+                <p>saturday</p>
+            </li>
+        </ul>
 
-        </aside>
-    </main>
+
+    </section>
 
 
     <!-- Wwather Detalis -->
-    <article class="hidden swing-in-top-fwd " id="weather-details-container">
+    <section class="hidden swing-in-top-fwd " id="weather-details-container">
         <h2>weather details</h2>
         <span id="exit-button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 22L22 2" stroke="white" stroke-width="3" />
-                <path d="M2 2L22 22" stroke="white" stroke-width="3" />
+                <path d="M2 22L22 2" stroke="#000000" stroke-width="3" />
+                <path d="M2 2L22 22" stroke="#000000" stroke-width="3" />
             </svg>
         </span>
 
         <div id="weather-details-content">
             <div class="weather-detail">
                 <div class="fetched-info" id="humidity">0</div>
-                <span class="unit humidity">%</span>
                 <p class="detail-text">humidity</p>
             </div>
             <div class="weather-detail">
                 <div class="fetched-info" id="pressure">0</div>
-                <span class="unit pressure">hpa</span>
                 <p class="detail-text">pressure</p>
             </div>
             <div class="weather-detail">
                 <div class="fetched-info" id="visibility">0</div>
-                <span class="unit visibility">+km</span>
                 <p class="detail-text">visibility</p>
             </div>
             <div class="weather-detail">
                 <div class="fetched-info" id="wind">0</div>
-                <span class="unit wind">kph</span>
                 <p class="detail-text">wind speed</p>
             </div>
             <div class="weather-detail">
@@ -181,10 +133,10 @@
                 <p class="detail-text">max temp</p>
             </div>
         </div>
-    </article>
+    </section>
 
 
-    <!-- FOOTER  (GOOD) -->
+    <!-- FOOTER-->
     <footer>
         <p>&copy; Alex 2020 - 2021</p>
     </footer>

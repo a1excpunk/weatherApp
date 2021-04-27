@@ -1,16 +1,15 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  color: #ffffff;
-  background: url("../assets/image3.jpg");
+  color: #ececec;
+  background: url("../assets/image4.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -20,683 +19,389 @@ body {
   height: 100vh;
 }
 
-main {
+#main-content-container {
+  background-color: #30303085;
   width: 100%;
-  min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: -30px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 3fr;
+  gap: 20px;
+  /* position: absolute;   */
 }
 
-main #main-content-container {
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-  padding: 10px;
-  height: 120px;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  top: 15%;
-}
-
-main #main-content-container div {
-  width: 5em;
-  height: 5em;
-}
-
-main #main-content-container #main-temp-container {
+#main-temp-container {
+  width: 100%;
   position: relative;
+  text-align: center;
 }
 
-main #main-content-container #main-temp-container span.celcius {
-  width: 12px;
-  height: 12px;
-  border: 3px solid;
-}
-
-main #main-content-container #main-temp-container p {
+#main-temp-container p {
   font-size: 4em;
-  height: 100%;
-  text-align: center;
-  padding-top: 0.2em;
-}
-
-main #main-content-container #city-weather-container {
   position: relative;
 }
 
-main #main-content-container #city-weather-container #weather-text {
+#main-temp-container p::after {
+  content: "";
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  position: absolute;
+}
+
+#city-weather-container {
+  position: relative;
+}
+
+#city-weather-container #weather-text {
   text-transform: capitalize;
-  font-size: 1em;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 
-main #main-content-container #city-weather-container span {
-  display: block;
-  padding: 8px 0 0 0;
+#city-weather-container p:nth-of-type(2) {
+  padding: 5px 0;
 }
 
-main #main-content-container #city-weather-container #city-name {
-  font-size: 1.5;
+#city-weather-container #city-name {
   text-transform: uppercase;
+  font-size: 1.5;
   position: absolute;
   bottom: 0;
 }
 
-main #main-content-container #feels-like-container {
+#feels-like-container {
   position: relative;
 }
 
-main #main-content-container #feels-like-container span.celcius {
-  top: 5px;
-  right: 10px;
+#feels-like-container #feels-like-temp::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
 }
 
-main #main-content-container #feels-like-container #feels-like-temp {
-  font-size: 1.8em;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 70%;
+#feels-like-container #feels-like-temp {
+  font-size: 2em;
 }
-
-main #main-content-container #feels-like-container #feels-like-text {
+#feels-like-container #feels-like-text {
   font-size: 1em;
   text-transform: capitalize;
   position: absolute;
   bottom: 0;
 }
 
-main #main-content-container #local-date-container {
+#local-date-container {
   position: relative;
 }
 
-main #main-content-container #local-date-container #time {
-  font-size: 1.2em;
-  display: block;
+#time {
+  font-size: 1.3em;
   margin-bottom: 10px;
 }
 
-main #main-content-container #local-date-container #week-day {
+#week-day {
   font-size: 1em;
   text-transform: capitalize;
 }
 
-main #main-content-container #local-date-container p:last-of-type {
-  font-size: 0.6em;
+#local-date-container p:last-of-type {
+  font-size: 0.65em;
+  letter-spacing: 2px;
   text-transform: uppercase;
   position: absolute;
   bottom: 0;
 }
 
-main #main-content-container #weather-detail-button {
+#weather-detail-button {
   background-color: #303030;
   padding: 10px;
+  text-align: center;
+}
+
+#weather-detail-button p {
   position: relative;
-}
-
-main #main-content-container #weather-detail-button p {
-  width: 4em;
+  top: calc(50% - 30px);
+  font-size: 1.4em;
   text-transform: capitalize;
-  position: absolute;
-  top: 1.3em;
 }
 
-main #main-content-container #weather-detail-button:hover {
+#weather-detail-button:hover {
   cursor: pointer;
   background-color: #242424;
 }
 
-main #main-content-container #weather-detail-button:active {
-  -webkit-transform: translate(1px, 1px);
-          transform: translate(1px, 1px);
+#weather-detail-button:active {
+  transform: scale(0.99);
 }
 
-main #side-content-container {
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 30%;
-  min-height: 100vh;
-}
-
-main #side-content-container #input-section {
-  margin-top: 20px;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  height: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+#input-section {
+  width: 100%;
+  height: 60%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-main #side-content-container #input-section input,
-main #side-content-container #input-section button {
-  background-color: #ececec;
-  border: none;
-  height: 100%;
-  outline: #ececec;
-}
-
-main #side-content-container #input-section input {
+#input-section input {
   width: 70%;
-  padding: 9px 12px;
-}
-
-main #side-content-container #input-section button {
-  width: 20%;
-  font-size: 0.8em;
-  font-weight: 600;
-  text-transform: uppercase;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
+  background-color: #7c7c7cd0;
+  border: none;
+  padding-left: 20px;
+  color: #fff;
   min-width: max-content;
-  padding: 9px 12px;
-  color: #303030;
-  cursor: pointer;
 }
 
-main #side-content-container #input-section button:hover {
-  background-color: #e0e0e0;
+input::placeholder {
+  color: #fff;
+  letter-spacing: 1px;
 }
 
-main #side-content-container #input-section button:active {
-  -webkit-transform: scale(0.985);
-          transform: scale(0.985);
+input:focus,
+button:focus {
+  outline: none;
 }
 
-main #side-content-container #aside-content {
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #side-content-container #aside-content #cities {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #side-content-container #aside-content #cities ul {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 30px;
-}
-
-main #side-content-container #aside-content #cities ul li.default-city {
-  padding-top: 20px;
+#input-section button {
+  width: 20%;
+  border: none;
   text-transform: uppercase;
-  cursor: pointer;
-  text-align: center;
-  -webkit-box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
-          box-shadow: -1px 3px 5px 0 rgba(61, 61, 61, 0.5);
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-main #side-content-container #aside-content #cities ul li.default-city:hover {
-  -webkit-transform: translateX(-5px);
-          transform: translateX(-5px);
-}
-
-main #side-content-container #aside-content #week-weather-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  margin: 0 30px;
-  margin-top: 70px;
-  height: 100%;
-  width: 100%;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul li {
-  background-color: #272727;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 8px 15px;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul li .fetched-value-container {
-  position: relative;
-  width: 100%;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul li .fetched-value-container .fetched-value {
-  font-size: 3.5em;
-  position: relative;
-  top: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 70%;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul li .fetched-value-container span {
-  position: absolute;
-  top: 15px;
-  right: -5px;
-  width: 10px;
-  height: 10px;
-  border: 2px solid;
-  border-radius: 100%;
-}
-
-main #side-content-container #aside-content #week-weather-container #week-weather-content ul li p {
-  width: 100%;
-  height: 2.5em;
   font-size: 1em;
-  text-transform: capitalize;
-  text-align: center;
-  position: relative;
-  top: 20px;
+  letter-spacing: 1px;
+  background-color: rgb(250, 250, 250);
+  min-width: max-content;
 }
 
+#input-section button:hover {
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
+
+#input-section button:active {
+  transform: scale(0.99);
+}
+
+/* WEATHER DETAILS */
 #weather-details-container {
-  position: absolute;
-  top: 16em;
-  left: 20%;
-  width: 40em;
-  height: 25em;
-  -webkit-transition: all 500ms;
+  background-color: rgba(255, 255, 255, 0.2);
   transition: all 500ms;
-  background-color: #b4b4b43f;
+  width: 700px;
+  margin: 0 auto;
+  min-height: max-content;
+  padding: 20px 0;
 }
 
 #weather-details-container h2 {
+  color: #242424;
   text-align: center;
-  margin-top: 1em;
+  margin-bottom: 40px;
   text-transform: capitalize;
 }
-
 #weather-details-container #exit-button {
   position: absolute;
   top: 1em;
   right: 1em;
-  padding: 5px;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  padding: 6px 6px 5px 6px;
+  transition: all 300ms ease-in;
+  border: 2px solid transparent;
 }
 
 #weather-details-container #exit-button:hover {
   cursor: pointer;
-  background-color: #303030;
-}
-
-#weather-details-container #exit-button:active {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  background-color: #272727;
+  border: 2px solid #242424;
 }
 
 #weather-details-container #weather-details-content {
-  margin: 2em 0;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 7%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
 }
 
 #weather-details-container #weather-details-content .weather-detail {
-  position: relative;
-  width: 8em;
-  height: 8em;
-  margin-bottom: 2em;
-  background-color: #242424;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 1em;
+  background-color: #272727;
 }
-
-#weather-details-container #weather-details-content .weather-detail .fetched-info {
-  font-size: 2em;
+.weather-detail {
   text-align: center;
-  margin-top: 0.5em;
+  padding: 20px 0 20px 0;
 }
 
-#weather-details-container #weather-details-content .weather-detail .unit {
-  display: block;
-  text-align: center;
-  top: 1.8em;
-  right: 0.3em;
-  font-size: 1.2em;
-  color: #e0e0e0;
+.fetched-info {
+  font-size: 2.5em;
+  padding-bottom: 10px;
 }
 
-#weather-details-container #weather-details-content .weather-detail .unit.humidity {
-  position: absolute;
-  top: 0.8em;
-  right: 0.7em;
-  font-size: 1.6em;
-}
-
-#weather-details-container #weather-details-content .weather-detail .unit.celcius {
-  top: 0.5em;
-  right: 2em;
-}
-
-#weather-details-container #weather-details-content .weather-detail .detail-text {
-  text-align: center;
+.detail-text {
+  font-size: 1.4em;
   text-transform: capitalize;
-  font-size: 1.2em;
 }
 
-.celcius {
-  width: 8px;
-  height: 8px;
-  border: 2px solid;
+#humidity::after {
+  content: "%";
+  font-size: 15px;
+}
+#pressure::after {
+  content: "hpa";
+  font-size: 15px;
+}
+#visibility::after {
+  content: "+km";
+  font-size: 15px;
+}
+#wind::after {
+  content: "kph";
+  font-size: 15px;
+}
+#min-temp::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border: 1px solid;
   border-radius: 100%;
   position: absolute;
-  right: 0;
+}
+#max-temp::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
+}
+
+/* WEEK DAYS */
+li {
+  list-style-type: none;
+}
+
+#week-weather-container {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+li {
+  background-color: #242424a9;
+  padding: 10px 25px;
+}
+
+.fetched-value {
+  font-size: 1.8em;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.fetched-value::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
+}
+
+/* ----------------------------------------------
+  * Generated by Animista
+  * Licensed under FreeBSD License.
+  * See http://animista.net/license for more info.
+  * w: http://animista.net, t: @cssanimista
+  * ---------------------------------------------- */
+
+.swing-in-top-fwd {
+  animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+  * Generated by Animista
+  * Licensed under FreeBSD License.
+  * See http://animista.net/license for more info.
+  * w: http://animista.net, t: @cssanimista
+  * ---------------------------------------------- */
+
+.swing-out-top-bck {
+  animation: swing-out-top-bck 0.7s ease-out both;
+}
+
+@keyframes swing-out-top-bck {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+.scale-out-center {
+  animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  bottom: 0;
 }
 
 .hidden {
   display: none;
 }
 
-li {
-  list-style-type: none;
-}
-
-.default-city {
-  padding: 7px 0;
-  width: 45%;
-  height: 50%;
-  margin-bottom: 5%;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
-
-/* ----------------------------------------------
- * Generated by Animista on 2021-4-23 19:9:10
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-/**
- * ----------------------------------------
- * animation swing-in-top-fwd
- * ----------------------------------------
- */
-@-webkit-keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
-@keyframes swing-in-top-fwd {
-  0% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-}
-
-.swing-in-top-fwd {
-  -webkit-animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-/* ----------------------------------------------
- * Generated by Animista on 2021-4-23 19:33:18
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-/**
- * ----------------------------------------
- * animation swing-out-top-bck
- * ----------------------------------------
- */
-@-webkit-keyframes swing-out-top-bck {
-  0% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-}
-@keyframes swing-out-top-bck {
-  0% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotateX(-100deg);
-            transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    opacity: 0;
-  }
-}
-
-.swing-out-top-bck {
-  -webkit-animation: swing-out-top-bck 0.7s ease-out both;
-          animation: swing-out-top-bck 0.7s ease-out both;
-}
-
-/* ----------------------------------------------
- * Generated by Animista on 2021-4-23 19:16:16
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-/**
- * ----------------------------------------
- * animation scale-out-center
- * ----------------------------------------
- */
-@-webkit-keyframes scale-out-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-}
-@keyframes scale-out-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-}
-
-.scale-out-center {
-  -webkit-animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-          animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-
-footer {
-  position: absolute;
-  height: 30px;
-}
-
-footer p {
-  font-size: 0.8em;
-  padding-bottom: 10px;
-}
-
 /* Media queries for Small screens, laptops: 769px — 1024px*/
+@media screen and (min-width: 769px) and (max-width: 1044px) {
+}
 /* Media queries for iPads, Tablets: 481px — 768px*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .desktop-only {
     display: none;
   }
 }
-
 /* Media queries for XS Mobile devices: 320px — 480px*/
 @media screen and (max-width: 320px) {
   .desktop-only {
     display: none;
   }
 }
-
-/*Media queries for  Print */
-@media print {
-  * {
-    color: #333;
-  }
-  body {
-    background-color: white;
-  }
-  input,
-  button,
-  #cities {
-    display: none;
-  }
-}
-/*# sourceMappingURL=style.css.map */

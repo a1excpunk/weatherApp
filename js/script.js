@@ -28,16 +28,6 @@ const maxTemp = $('max-temp')
 const input = $('input')
 const searchButton = $('search')
 
-const cities = $('cities')
-const beijing = $('beijing-city')
-const newYork = $('newyork-city')
-const moscow = $('moscow-city')
-const tokyo = $('tokyo-city')
-
-
-
-
-
 // week day
 let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 let weekDayValue = new Date();
@@ -52,8 +42,14 @@ function getTime() {
     } else {
         localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
     }
+    if (time.getHours() < 10) {
+        localTime.innerHTML = '0' +  time.getHours() + ':' + time.getMinutes()
+    } else {
+        localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
+    }
 }
 window.addEventListener('load', getTime)
+window.addEventListener('click', getTime)
 
 
 // geolocation
@@ -130,43 +126,6 @@ function fetchedData(data) {
     const maxTempValue = data['main']['temp_max'];
     maxTemp.innerHTML = maxTempValue.toFixed(0);
 }
-
-beijing.addEventListener("click", () => {
-    fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=beijing&units=metric&appid=def095bd9d82a382b7703effa3533fac`
-    )
-        .then((Response) => Response.json())
-        .then((data) => {
-            fetchedData(data);
-        });
-});
-newYork.addEventListener("click", () => {
-    fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=new%20york&units=metric&appid=def095bd9d82a382b7703effa3533fac`
-    )
-        .then((Response) => Response.json())
-        .then((data) => {
-            fetchedData(data);
-        });
-});
-tokyo.addEventListener("click", () => {
-    fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&appid=def095bd9d82a382b7703effa3533fac`
-    )
-        .then((Response) => Response.json())
-        .then((data) => {
-            fetchedData(data);
-        });
-});
-moscow.addEventListener("click", () => {
-    fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=moscow&units=metric&appid=def095bd9d82a382b7703effa3533fac`
-    )
-        .then((Response) => Response.json())
-        .then((data) => {
-            fetchedData(data);
-        });
-});
 
 
 //input search
