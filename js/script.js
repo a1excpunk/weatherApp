@@ -28,6 +28,18 @@ const maxTemp = $('max-temp')
 const input = $('input')
 const searchButton = $('search')
 
+//week day temps
+let weekFetchedTemp =
+document.querySelectorAll('.fetched-value');
+const monday = weekFetchedTemp[0];
+const tuesday = weekFetchedTemp[1];
+const wednesday = weekFetchedTemp[2];
+const thursday = weekFetchedTemp[3];
+const friday = weekFetchedTemp[4];
+const saturday = weekFetchedTemp[5];
+const sunday = weekFetchedTemp[6];
+
+
 // week day
 let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 let weekDayValue = new Date();
@@ -43,14 +55,11 @@ function getTime() {
         localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
     }
     if (time.getHours() < 10) {
-        localTime.innerHTML = '0' +  time.getHours() + ':' + time.getMinutes()
+        localTime.innerHTML = '0' + time.getHours() + ':' + time.getMinutes()
     } else {
         localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
     }
 }
-window.addEventListener('load', getTime)
-window.addEventListener('click', getTime)
-
 
 // geolocation
 function getLocation() {
@@ -62,16 +71,52 @@ function getLocation() {
             let latitude =
                 Number(position.coords.latitude.toFixed(4));
             let longitude = Number(position.coords.longitude.toFixed(4));
-            console.log(latitude, longitude);
-            return latitude, longitude
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=hourly,minutely&appid=def095bd9d82a382b7703effa3533fac`)
+                .then(Response => Response.json())
+                .then(data => fetchedWeekWeather(data))
         }
         function error() {
             console.log("Geolocation Error!:(");
         }
     }
 }
-window.addEventListener("load", getLocation)
 
+// Week weather
+function fetchedWeekWeather(data){
+    const mondayValue = data['daily'][1]['temp']['day'];
+    monday.innerHTML = mondayValue.toFixed(0);
+
+    const tuesdayValue = data['daily'][2]['temp']['day'];
+    tuesday.innerHTML = tuesdayValue.toFixed(0);
+
+    const wednesdayValue = data['daily'][3]['temp']['day'];
+    wednesday.innerHTML = wednesdayValue.toFixed(0);
+
+    const thursdayValue = data['daily'][4]['temp']['day'];
+    thursday.innerHTML = thursdayValue.toFixed(0);
+
+    const fridayValue = data['daily'][5]['temp']['day'];
+    friday.innerHTML = fridayValue.toFixed(0);
+
+    const saturdayValue = data['daily'][6]['temp']['day'];
+    saturday.innerHTML = saturdayValue.toFixed(0);
+
+    const sundayValue = data['daily'][0]['temp']['day'];
+    sunday.innerHTML = sundayValue.toFixed(0);
+
+    const cityNameValue = data['timezone'].split('/').pop();
+    cityName.innerHTML = cityNameValue;
+    console.log(data);
+
+    const mainTempValue = data['current']['temp'];
+    mainTemp.innerHTML = mainTempValue.toFixed(0);
+
+    const weatherTextValue = data['current']['weather'][0]['main'];
+    weatherText.innerHTML =  weatherTextValue;
+
+    const feelsLikeTempValue = data['current']['feels_like'].toFixed(0);
+    feelsLikeTemp.innerHTML = feelsLikeTempValue;
+}
 
 // toggle weather details panel
 exitButton.addEventListener('click', function () {
@@ -96,6 +141,7 @@ weatherDetailButton.addEventListener('click', function () {
 
 // fetched data
 function fetchedData(data) {
+    console.log(data);
     const mainTempValue = data['main']['temp'];
     mainTemp.innerHTML = mainTempValue.toFixed(0);
 
@@ -127,7 +173,6 @@ function fetchedData(data) {
     maxTemp.innerHTML = maxTempValue.toFixed(0);
 }
 
-
 //input search
 input.addEventListener("keydown", (event) => {
     if (event.code == "Enter") {
@@ -152,3 +197,31 @@ searchButton.addEventListener("click", () => {
         });
 });
 
+window.addEventListener('load', getTime)
+window.addEventListener('click', getTime)
+window.addEventListener("load", getLocation)
+
+// rethrew data,(for converting) from input to lat and lon but recieved data is too bad to display. but maybe code will be useful
+
+// input.addEventListener("keydown", (event) => {
+//     if (event.code == "Enter") {
+//         const lat = (data)=> data['coord']['lat'];
+//         const lon = (data)=> data['coord']['lon'];
+    
+//         fetch(
+//             `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=def095bd9d82a382b7703effa3533fac`
+//         )
+//             .then((Response) => Response.json())
+//             .then((data) => {
+//                 lat(data);
+//                 lon(data);
+//                 input.value = "";
+//                 console.log(lat(data), lon(data));
+//                 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat(data)}&lon=${lon(data)}&units=metric&exclude=hourly,minutely&appid=def095bd9d82a382b7703effa3533fac`)
+//                     .then(Response => Response.json())
+//                     .then(data => fetchedWeekWeather(data))
+//             });
+
+
+//     }
+// });
