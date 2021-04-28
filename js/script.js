@@ -17,6 +17,7 @@ const weatherDetailButton = $('weather-detail-button');
 const weatherDetailsContainer = $('weather-details-container');
 const exitButton = $('exit-button')
 
+
 const humidity = $('humidity')
 const pressure = $('pressure')
 const visibility = $('visibility')
@@ -30,7 +31,7 @@ const searchButton = $('search')
 
 //week day temps
 let weekFetchedTemp =
-document.querySelectorAll('.fetched-value');
+    document.querySelectorAll('.fetched-value');
 const monday = weekFetchedTemp[0];
 const tuesday = weekFetchedTemp[1];
 const wednesday = weekFetchedTemp[2];
@@ -42,8 +43,8 @@ const sunday = weekFetchedTemp[6];
 
 // week day
 let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-let weekDayValue = new Date();
-weekDay.innerHTML = weekDays[weekDayValue.getDay()]
+let weekDayValue = new Date().getDay();
+weekDay.innerHTML = weekDays[weekDayValue]
 
 
 // time stamp
@@ -82,7 +83,7 @@ function getLocation() {
 }
 
 // Week weather
-function fetchedWeekWeather(data){
+function fetchedWeekWeather(data) {
     const mondayValue = data['daily'][1]['temp']['day'];
     monday.innerHTML = mondayValue.toFixed(0);
 
@@ -112,13 +113,31 @@ function fetchedWeekWeather(data){
     mainTemp.innerHTML = mainTempValue.toFixed(0);
 
     const weatherTextValue = data['current']['weather'][0]['main'];
-    weatherText.innerHTML =  weatherTextValue;
+    weatherText.innerHTML = weatherTextValue;
 
     const feelsLikeTempValue = data['current']['feels_like'].toFixed(0);
     feelsLikeTemp.innerHTML = feelsLikeTempValue;
+
+    const humidityValue = data['current']['humidity'];
+    humidity.innerHTML = humidityValue;
+
+    const pressureValue = data['current']['pressure'];
+    pressure.innerHTML = pressureValue;
+
+    const visibilityValue = data['current']['visibility'];
+    visibility.innerHTML = (visibilityValue / 1000).toFixed(0);
+
+    const windSpeedValue = data['current']['wind_speed'];
+    windSpeed.innerHTML = windSpeedValue.toFixed(1);
+
+    const minTempValue = data['daily'][weekDayValue]['temp']['min'];
+    minTemp.innerHTML = minTempValue.toFixed(0);
+
+    const maxTempValue = data['daily'][weekDayValue]['temp']['max'];
+    maxTemp.innerHTML = maxTempValue.toFixed(0);
 }
 
-// toggle weather details panel
+// toggle weather details and week weather panels
 exitButton.addEventListener('click', function () {
     weatherDetailsContainer.classList.add('scale-out-center')
     setTimeout(() => {
@@ -137,7 +156,10 @@ weatherDetailButton.addEventListener('click', function () {
             weatherDetailsContainer.classList.add('hidden')
         }, 700)
     }
+
+    document.querySelector('footer').style.position = "static"
 })
+
 
 // fetched data
 function fetchedData(data) {
@@ -207,7 +229,7 @@ window.addEventListener("load", getLocation)
 //     if (event.code == "Enter") {
 //         const lat = (data)=> data['coord']['lat'];
 //         const lon = (data)=> data['coord']['lon'];
-    
+
 //         fetch(
 //             `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=def095bd9d82a382b7703effa3533fac`
 //         )

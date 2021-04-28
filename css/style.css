@@ -117,25 +117,25 @@ body {
   bottom: 0;
 }
 
-#weather-detail-button {
+#weather-detail-button{
   background-color: #3030307a;
   padding: 10px;
   text-align: center;
 }
 
-#weather-detail-button p {
+#weather-detail-button p{
   position: relative;
   top: calc(50% - 30px);
   font-size: 1.4em;
   text-transform: capitalize;
 }
 
-#weather-detail-button:hover {
+#weather-detail-button:hover{
   cursor: pointer;
   background-color: #303030;
 }
 
-#weather-detail-button:active {
+#weather-detail-button:active{
   transform: scale(0.99);
 }
 
@@ -465,34 +465,50 @@ footer {
 /* Media queries for XS Mobile devices*/
 @media screen and (max-width: 550px) {
   #main-content-container {
-    grid-template-columns: repeat(7,1fr);
-    grid-template-rows: repeat(2,1fr);
-    row-gap: 30px;
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   #main-temp-container{
-    grid-column: 1/5;
+    flex-grow: 1;
   }
   #city-weather-container{
-    grid-column: 5/8;
+    height: 80px;
+    width: 30%;
   }
   #feels-like-container{
-    grid-column: 1/2;
+    height: 80px;
+    width: 30%;
   }
   #local-date-container{
-    grid-column: 2/4;
+    height: 80px;
+    width: 30%;
   }
   #weather-detail-button{
-    grid-column: 7/8;
-    grid-row: 2/3;
+width: 45%;
   }
   #input-section{
-    grid-column: 1/8;
-    display: none;
+   width: 100%;
+
   }
+
+  #weather-detail-button p{
+    position: static;
+  }
+
   #week-weather-container{
-    grid-column: 1/8;
-    display: none;
+
+    margin-top: 30px;
   }
+
+  ul{
+    flex-wrap: wrap;
+  }
+
+  #weather-details-container{
+    width: 100%;
+  }
+
 
 }
