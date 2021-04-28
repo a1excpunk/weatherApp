@@ -435,7 +435,7 @@ footer {
   }
 }
 
-/* Media queries for iPads, Tablets*/
+/* Media queries for iPads, Tablets and mobile*/
 @media screen and (max-width: 968px) {
   #main-content-container {
     display: none;
