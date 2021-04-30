@@ -50,11 +50,6 @@ weekDay.innerHTML = weekDays[weekDayValue]
 // time stamp
 function getTime() {
     let time = new Date()
-    // if (time.getMinutes() < 10) {
-    //     localTime.innerHTML = time.getHours() + ':0' + time.getMinutes()
-    // } else {
-    //     localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
-    // }
     if (time.getHours() < 10 && time.getMinutes() < 10) {
         localTime.innerHTML = `0${time.getHours()}:0${time.getMinutes()}`
     }else if (time.getHours() < 10) {
