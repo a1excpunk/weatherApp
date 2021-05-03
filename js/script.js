@@ -13,10 +13,12 @@ const weekDay = $('week-day');
 
 const weatherDetailButton = $('weather-detail-button');
 
+const input = $('input')
+const searchButton = $('search')
+
 //weather details panel
 const weatherDetailsContainer = $('weather-details-container');
 const exitButton = $('exit-button')
-
 
 const humidity = $('humidity')
 const pressure = $('pressure')
@@ -25,13 +27,8 @@ const windSpeed = $('wind')
 const minTemp = $('min-temp')
 const maxTemp = $('max-temp')
 
-//aside panel
-const input = $('input')
-const searchButton = $('search')
-
 //week day temps
-let weekFetchedTemp =
-    document.querySelectorAll('.fetched-value');
+let weekFetchedTemp = document.querySelectorAll('.fetched-value');
 const monday = weekFetchedTemp[0];
 const tuesday = weekFetchedTemp[1];
 const wednesday = weekFetchedTemp[2];
@@ -81,7 +78,7 @@ function getLocation() {
     }
 }
 
-// Week weather
+// Week weather data
 function fetchedWeekWeather(data) {
     const mondayValue = data['daily'][1]['temp']['day'];
     monday.innerHTML = mondayValue.toFixed(0);
@@ -155,12 +152,10 @@ weatherDetailButton.addEventListener('click', function () {
             weatherDetailsContainer.classList.add('hidden')
         }, 700)
     }
-
-    document.querySelector('footer').style.position = "static"
 })
 
 
-// fetched data
+// fetched data for main panel
 function fetchedData(data) {
     console.log(data);
     const mainTempValue = data['main']['temp'];
