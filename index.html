@@ -13,141 +13,132 @@
 </head>
 
 <body>
-    <!-- MAIN weather info -->
-    <section id="main-content-container">
-        <div id="main-temp-container">
-            <p id="main-temp">0</p>
-        </div>
-
-        <div id="city-weather-container">
-            <p id="weather-text">sunny</p>
-            <p>in</p>
-            <p id="city-name">city</p>
-        </div>
-
-
-        <div id="feels-like-container">
-            <p id="feels-like-temp">0</p>
-            <p id="feels-like-text">feels like</p>
-        </div>
-
-        <div id="local-date-container">
-            <div id="time"></div>
-            <p id="week-day"></p>
-            <p>local time</p>
-        </div>
-
-        <div id="weather-detail-button">
-            <p>weather details</p>
-        </div>
-
-        <!-- SEARCH -->
-        <div id="input-section">
-            <input type="text" id="input" placeholder="Enter Location">
-            <button type="button" id="search">Search</button>
-        </div>
-    </section>
-    
-    <!-- WEEK weather -->
-    <section>
-        <div id="week-weather-container" class="swing-in-top-fwd">
-            <p>Week's Weather On My Location</p>
-            <ul>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>monday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>tuesday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>wednesday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>thursday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>friday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>saturday</p>
-                </li>
-                <li>
-                    <div class="fetched-value-container">
-                        <div class="fetched-value">0</div>
-                    </div>
-                    <p>sunday</p>
-                </li>
-            </ul>
-    
-    
-        </div>
-    </section>
-
-    <!-- Weather Detalis -->
-    <section class="hidden swing-in-top-fwd " id="weather-details-container">
-        <h2>weather details</h2>
-        <span id="exit-button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 22L22 2" stroke="#ffffff" stroke-width="3" />
-                <path d="M2 2L22 22" stroke="#ffffff" stroke-width="3" />
-            </svg>
-        </span>
-
-        <div id="weather-details-content">
-            <div class="weather-detail">
-                <div class="fetched-info" id="humidity">0</div>
-                <p class="detail-text">humidity</p>
+    <div class="container">
+        <!-- MAIN weather info -->
+        <section id="main-content-container">
+            <div id="main-temp-container">
+                <p id="main-temp">0</p>
             </div>
-            <div class="weather-detail">
-                <div class="fetched-info" id="pressure">0</div>
-                <p class="detail-text">pressure</p>
+
+            <div class="location-n-feels-like-n-local-time">
+                <div id="city-weather-container">
+                    <p id="weather-text">sunny</p>
+                    <p>in</p>
+                    <p id="city-name">city</p>
+                </div>
+
+                <div id="feels-like-container">
+                    <p id="feels-like-temp">0</p>
+                    <p id="feels-like-text">feels like</p>
+                </div>
+
+                <div id="local-date-container">
+                    <div id="time"></div>
+                    <p id="week-day"></p>
+                    <p>local time</p>
+                </div>
             </div>
-            <div class="weather-detail">
-                <div class="fetched-info" id="visibility">0</div>
-                <p class="detail-text">visibility</p>
+            <!-- SEARCH -->
+            <div id="input-section">
+                <input type="text" id="input" placeholder="Enter Location">
+                <button type="button" id="search">Search</button>
             </div>
-            <div class="weather-detail">
-                <div class="fetched-info" id="wind">0</div>
-                <p class="detail-text">wind speed</p>
-            </div>
-            <div class="weather-detail">
-                <div class="fetched-info" id="min-temp">0</div>
-                <span class="unit celcius">
-                </span>
-                <p class="detail-text">min temp</p>
-            </div>
-            <div class="weather-detail">
-                <div class=" fetched-info" id="max-temp">0</div>
-                <span class=" unit celcius">
-                </span>
-                <p class="detail-text">max temp</p>
-            </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- WEEK weather -->
+        <section>
+            <div id="week-weather-container">
+                <p>Week's Weather On My Location</p>
+                <ul>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>monday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>tuesday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>wednesday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>thursday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>friday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>saturday</p>
+                    </li>
+                    <li>
+                        <div class="fetched-value-container">
+                            <div class="fetched-value">0</div>
+                        </div>
+                        <p>sunday</p>
+                    </li>
+                </ul>
 
 
-    <!-- FOOTER-->
-    <footer>
-        <p>&copy; Alex 2020 - 2021</p>
-    </footer>
+            </div>
+        </section>
+
+        <!-- Weather Detalis -->
+        <section id="weather-details-container">
+            <h2>weather details</h2>
+            <div id="weather-details-content">
+                <div class="weather-detail">
+                    <div class="fetched-info" id="humidity">0</div>
+                    <p class="detail-text">humidity</p>
+                </div>
+                <div class="weather-detail">
+                    <div class="fetched-info" id="pressure">0</div>
+                    <p class="detail-text">pressure</p>
+                </div>
+                <div class="weather-detail">
+                    <div class="fetched-info" id="visibility">0</div>
+                    <p class="detail-text">visibility</p>
+                </div>
+                <div class="weather-detail">
+                    <div class="fetched-info" id="wind">0</div>
+                    <p class="detail-text">wind speed</p>
+                </div>
+                <div class="weather-detail">
+                    <div class="fetched-info" id="min-temp">0</div>
+                    <span class="unit celcius">
+                    </span>
+                    <p class="detail-text">min temp</p>
+                </div>
+                <div class="weather-detail">
+                    <div class=" fetched-info" id="max-temp">0</div>
+                    <span class=" unit celcius">
+                    </span>
+                    <p class="detail-text">max temp</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FOOTER-->
+        <footer>
+            <p>&copy; Alex 2020 - 2021</p>
+        </footer>
+    </div>
 </body>
 
 </html>

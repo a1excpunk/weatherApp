@@ -49,14 +49,26 @@ function getTime() {
     let time = new Date()
     if (time.getHours() < 10 && time.getMinutes() < 10) {
         localTime.innerHTML = `0${time.getHours()}:0${time.getMinutes()}`
-    }else if (time.getHours() < 10) {
+    } else if (time.getHours() < 10) {
         localTime.innerHTML = '0' + time.getHours() + ':' + time.getMinutes()
     } else if (time.getMinutes() < 10) {
         localTime.innerHTML = time.getHours() + ':0' + time.getMinutes()
     } else {
         localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
     }
+
 }
+
+function changeBackground() {
+    let time = new Date()
+    if (time.getHours() >= 6 && time.getHours() < 21) {
+        body.classList.add('day')
+    } else {
+        body.classList.add('night')
+    }
+}
+
+changeBackground()
 
 // geolocation
 function getLocation() {
@@ -132,27 +144,6 @@ function fetchedWeekWeather(data) {
     const maxTempValue = data['daily'][weekDayValue]['temp']['max'];
     maxTemp.innerHTML = maxTempValue.toFixed(0);
 }
-
-// toggle weather details and week weather panels
-exitButton.addEventListener('click', function () {
-    weatherDetailsContainer.classList.add('scale-out-center')
-    setTimeout(() => {
-        weatherDetailsContainer.classList.add('hidden')
-        weatherDetailsContainer.classList.remove('scale-out-center')
-    }, 700)
-
-})
-weatherDetailButton.addEventListener('click', function () {
-    if (weatherDetailsContainer.classList.contains('hidden')) {
-        weatherDetailsContainer.classList.remove('hidden')
-    } else {
-        weatherDetailsContainer.classList.add('swing-out-top-bck')
-        setTimeout(() => {
-            weatherDetailsContainer.classList.remove('swing-out-top-bck')
-            weatherDetailsContainer.classList.add('hidden')
-        }, 700)
-    }
-})
 
 
 // fetched data for main panel

@@ -10,39 +10,116 @@
 body {
   color: #ececec;
   background-color: #272727;
-  background-image: linear-gradient(
-    135deg,
-    rgb(244, 255, 122),
-    rgb(218, 241, 146),
-    rgb(193, 227, 170),
-    rgb(167, 213, 194),
-    rgb(142, 199, 218),
-    rgb(116, 185, 242),
-    rgb(102, 176, 238),
-    rgb(88, 166, 234),
-    rgb(75, 157, 231),
-    rgb(61, 148, 227),
-    rgb(47, 138, 223),
-    rgb(33, 129, 219)
-  );
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.hot{
+  /* higher than 25 C and clear*/
+  /* background-image: linear-gradient(
+    to bottom,
+    rgb(145, 23, 76),
+    rgb(155, 24, 73),
+    rgb(165, 25, 70),
+    rgb(174, 25, 67),
+    rgb(184, 26, 64),
+    rgb(194, 27, 61),
+    rgb(199, 48, 55),
+    rgb(203, 69, 49),
+    rgb(208, 90, 43),
+    rgb(213, 111, 36),
+    rgb(217, 132, 30),
+    rgb(222, 153, 24)
+  ); */
+
+}
+
+.night{
+  background-image: linear-gradient(
+    to bottom,
+    rgb(15, 15, 15),
+    rgb(16, 23, 23),
+    rgb(18, 30, 31),
+    rgb(19, 38, 40),
+    rgb(21, 45, 48),
+    rgb(22, 53, 56),
+    rgb(20, 57, 61),
+    rgb(18, 60, 66),
+    rgb(17, 64, 72),
+    rgb(15, 67, 77),
+    rgb(13, 71, 82),
+    rgb(11, 74, 87)
+  );
+}
+
+.day{
+    /* below 25c and clear */
+  background-image: linear-gradient(
+    to bottom,
+    rgb(117, 129, 255),
+    rgb(116, 135, 252),
+    rgb(116, 140, 248),
+    rgb(115, 146, 245),
+    rgb(114, 152, 242),
+    rgb(113, 158, 239),
+    rgb(113, 163, 235),
+    rgb(112, 169, 232),
+    rgb(111, 175, 229),
+    rgb(110, 181, 226),
+    rgb(110, 186, 222),
+    rgb(109, 192, 219)
+  );
+}
+
+.storm{
+  /* any tem and storm */
+  /* background-image: linear-gradient(
+    to bottom,
+    rgb(55, 34, 191),
+    rgb(67, 41, 197),
+    rgb(79, 49, 203),
+    rgb(90, 56, 210),
+    rgb(102, 64, 216),
+    rgb(114, 71, 222),
+    rgb(124, 83, 201),
+    rgb(134, 94, 179),
+    rgb(144, 106, 158),
+    rgb(153, 118, 137),
+    rgb(163, 129, 115),
+    rgb(173, 141, 94)
+  ); */
+
+}
+
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 h1 {
   display: none;
 }
-
+/* main temp */
 #main-content-container {
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr) 2fr;
-  gap: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.location-n-feels-like-n-local-time {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
 #main-temp-container {
-  width: 100%;
   position: relative;
   text-align: center;
 }
@@ -61,6 +138,7 @@ h1 {
   position: absolute;
 }
 
+/* city name */
 #city-weather-container {
   position: relative;
 }
@@ -80,6 +158,7 @@ h1 {
   font-size: 1.5;
 }
 
+/* feels like temp */
 #feels-like-container {
   position: relative;
 }
@@ -102,6 +181,7 @@ h1 {
   text-transform: capitalize;
 }
 
+/* local date */
 #local-date-container {
   position: relative;
 }
@@ -122,43 +202,20 @@ h1 {
   text-transform: uppercase;
 }
 
-#weather-detail-button {
-  background-color: #ffffff28;
-  font-weight: 600;
-  padding: 10px;
-  text-align: center;
-}
-
-#weather-detail-button p {
-  position: relative;
-  font-size: 1.4em;
-  text-transform: capitalize;
-}
-
-#weather-detail-button:hover {
-  cursor: pointer;
-  background-color: #ffffff28;
-}
-
-#weather-detail-button:active {
-  transform: scale(0.99);
-}
-
+/* input */
 #input-section {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1.5fr 1fr;
-  row-gap: 5px;
+  display: flex;
 }
 
 #input-section input {
-  background-color: #ffffff28;
+  background-color: #ffffff15;
   border: none;
-  padding-left: 20px;
   color: #fff;
   min-width: max-content;
   font-size: 1em;
+  padding: 20px;
+  width: 75%;
 }
 
 input::placeholder {
@@ -178,6 +235,8 @@ button:focus {
   letter-spacing: 1px;
   background-color: rgba(250, 250, 250, 0.541);
   min-width: max-content;
+  padding: 20px;
+  width: 25%;
 }
 
 #input-section button:hover {
@@ -191,44 +250,27 @@ button:focus {
 
 /* WEATHER DETAILS */
 #weather-details-container {
-  transition: all 500ms;
-  width: max-content;
-  margin: 0 auto;
   min-height: max-content;
-  padding: 20px;
-  background-color: #ffffff28;
 }
 
 #weather-details-container h2 {
   color: #fff;
   text-align: center;
-  margin-bottom: 40px;
   text-transform: capitalize;
 }
-#weather-details-container #exit-button {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  padding: 6px 6px 5px 6px;
-  transition: all 300ms ease-in;
-  border: 2px solid transparent;
-}
 
-#weather-details-container #exit-button:hover {
-  cursor: pointer;
-  border: 2px solid #fff;
-}
-
-#weather-details-container #weather-details-content {
+#weather-details-content {
   width: 100%;
   margin: 20px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .weather-detail {
   text-align: center;
+  width: 150px;
   padding: 20px;
 }
 
@@ -284,7 +326,6 @@ li {
   width: 100%;
   position: relative;
   padding: 30px 0;
-  background-color: #ffffff28;
   margin: 20px 0;
 }
 
@@ -325,119 +366,27 @@ li p {
   text-transform: capitalize;
 }
 
-/* ----------------------------------------------
-  * Generated by Animista
-  * Licensed under FreeBSD License.
-  * See http://animista.net/license for more info.
-  * w: http://animista.net, t: @cssanimista
-  * ---------------------------------------------- */
-
-.swing-in-top-fwd {
-  animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-@keyframes swing-in-top-fwd {
-  0% {
-    transform: rotateX(-100deg);
-    transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    transform: rotateX(0deg);
-    transform-origin: top;
-    opacity: 1;
-  }
-}
-
-/* ----------------------------------------------
-  * Generated by Animista
-  * Licensed under FreeBSD License.
-  * See http://animista.net/license for more info.
-  * w: http://animista.net, t: @cssanimista
-  * ---------------------------------------------- */
-
-.swing-out-top-bck {
-  animation: swing-out-top-bck 0.7s ease-out both;
-}
-
-@keyframes swing-out-top-bck {
-  0% {
-    transform: rotateX(0deg);
-    transform-origin: top;
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(-100deg);
-    transform-origin: top;
-    opacity: 0;
-  }
-}
-
-/* ----------------------------------------------
- * Generated by Animista
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info.
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-.scale-out-center {
-  animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-
-@keyframes scale-out-center {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 1;
-  }
-}
-
 /* FOOTER */
 
 footer {
-  position: absolute;
-  bottom: 0;
+  text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
-/* Media queries for iPads, Tablets and mobile*/
-@media screen and (max-width: 968px) {
-  body {
-    height: 100%;
-  }
-
-  #main-content-container {
-    padding: 20px;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
-  }
-
-  #weather-details-container {
-    width: 100%;
-  }
-
-  #weather-detail-button {
-    padding: 20px 0;
-  }
-
-  #input-section button {
-    padding: 5px 0;
-  }
-
-  footer {
-    position: static;
-  }
+footer p {
+  font-size: 0.7em;
 }
 
 @media screen and (max-width: 468px) {
-  #weather-details-container #weather-details-content {
-    grid-template-columns: 1fr;
+  #input-section button,
+  #input-section input {
+    width: 100%;
+  }
+  #input-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .location-n-feels-like-n-local-time{
+    flex-direction: column;
+    align-items: center;
   }
 }
