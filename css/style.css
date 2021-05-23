@@ -16,27 +16,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.hot{
-  /* higher than 25 C and clear*/
-  /* background-image: linear-gradient(
-    to bottom,
-    rgb(145, 23, 76),
-    rgb(155, 24, 73),
-    rgb(165, 25, 70),
-    rgb(174, 25, 67),
-    rgb(184, 26, 64),
-    rgb(194, 27, 61),
-    rgb(199, 48, 55),
-    rgb(203, 69, 49),
-    rgb(208, 90, 43),
-    rgb(213, 111, 36),
-    rgb(217, 132, 30),
-    rgb(222, 153, 24)
-  ); */
-
-}
-
-.night{
+.night {
   background-image: linear-gradient(
     to bottom,
     rgb(15, 15, 15),
@@ -54,8 +34,7 @@ body {
   );
 }
 
-.day{
-    /* below 25c and clear */
+.day {
   background-image: linear-gradient(
     to bottom,
     rgb(117, 129, 255),
@@ -72,27 +51,6 @@ body {
     rgb(109, 192, 219)
   );
 }
-
-.storm{
-  /* any tem and storm */
-  /* background-image: linear-gradient(
-    to bottom,
-    rgb(55, 34, 191),
-    rgb(67, 41, 197),
-    rgb(79, 49, 203),
-    rgb(90, 56, 210),
-    rgb(102, 64, 216),
-    rgb(114, 71, 222),
-    rgb(124, 83, 201),
-    rgb(134, 94, 179),
-    rgb(144, 106, 158),
-    rgb(153, 118, 137),
-    rgb(163, 129, 115),
-    rgb(173, 141, 94)
-  ); */
-
-}
-
 
 .container {
   max-width: 700px;
@@ -385,7 +343,7 @@ footer p {
     flex-direction: column;
     gap: 5px;
   }
-  .location-n-feels-like-n-local-time{
+  .location-n-feels-like-n-local-time {
     flex-direction: column;
     align-items: center;
   }

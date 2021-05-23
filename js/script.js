@@ -50,11 +50,11 @@ function getTime() {
     if (time.getHours() < 10 && time.getMinutes() < 10) {
         localTime.innerHTML = `0${time.getHours()}:0${time.getMinutes()}`
     } else if (time.getHours() < 10) {
-        localTime.innerHTML = '0' + time.getHours() + ':' + time.getMinutes()
+        localTime.innerHTML = `0${time.getHours()}:${time.getMinutes()}`
     } else if (time.getMinutes() < 10) {
-        localTime.innerHTML = time.getHours() + ':0' + time.getMinutes()
+        localTime.innerHTML = `${time.getHours()}:0${time.getMinutes()}`
     } else {
-        localTime.innerHTML = time.getHours() + ':' + time.getMinutes()
+        localTime.innerHTML = `${time.getHours()}:${time.getMinutes()}`
     }
 
 }
@@ -204,7 +204,10 @@ searchButton.addEventListener("click", () => {
         });
 });
 
-window.addEventListener('load', getTime)
+window.addEventListener('load', function () {
+    getTime()
+    setInterval((getTime), 15000)
+})
 window.addEventListener('click', getTime)
 window.addEventListener("load", getLocation)
 
