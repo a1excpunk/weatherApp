@@ -46,17 +46,14 @@ weekDay.innerHTML = weekDays[weekDayValue]
 
 // time stamp
 function getTime() {
-    let time = new Date()
-    if (time.getHours() < 10 && time.getMinutes() < 10) {
-        localTime.innerHTML = `0${time.getHours()}:0${time.getMinutes()}`
-    } else if (time.getHours() < 10) {
-        localTime.innerHTML = `0${time.getHours()}:${time.getMinutes()}`
-    } else if (time.getMinutes() < 10) {
-        localTime.innerHTML = `${time.getHours()}:0${time.getMinutes()}`
-    } else {
-        localTime.innerHTML = `${time.getHours()}:${time.getMinutes()}`
-    }
+    let time = new Date();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
 
+    hours = hours.toString().length === 1 ? '0' + hours.toString() : hours;
+    minutes = minutes.toString().length === 1 ? '0' + minutes.toString() : minutes;
+
+    localTime.innerHTML = `${hours}:${minutes}`;
 }
 
 function changeBackground() {
